@@ -1,0 +1,29 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap" rel="stylesheet">
+    <title>Category Items Detail</title>
+</head>
+<body>
+    <div class="main content-block">
+        <h1>Категорія "  {{ category.name }}"</h1>
+
+        <p>{{ category.description }}</p>
+
+        <h2>Страви в цій категорії:</h2>
+        {% for item in items %}
+            <div class="main content-block">
+                <h3>{{ item.name }}</h3>
+                <p>{{ item.description }}</p>
+                <p>Ціна: {{ item.price }}</p>
+                <img src="{{ item.image.url }}" alt="{{ item.name }}">
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
