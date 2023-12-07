@@ -20,7 +20,7 @@
         <div class="main content-block">
             <h2><a href="{% url 'item-detail' pk=item.pk %}">{{ item.name }}</a></h2>
             <p>{{ item.description }}</p>
-            <p>Price: {{ item.price }}</p>
+            <p>Ціна: {{ item.price }}грн</p>
             <img src="{{ item.image.url }}" alt="{{ item.name }}">
         </div>
     {% endfor %}
